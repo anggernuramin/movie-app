@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-
+import Search from "./Search";
 const Navbar = () => {
   return (
     <div className="bg-blue-900 text-white py-4">
@@ -8,7 +8,7 @@ const Navbar = () => {
         <Link href={"/"} className="cursor-pointer">
         <h1 className="font-semibold text-3xl">AnimeApp</h1>
         </Link>
-        <input className="input" type="text" placeholder="Text input" />
+        <Search />
       </div>
     </div>
   );
