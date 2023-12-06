@@ -7,29 +7,32 @@ import React, { useRef } from "react";
 
 const Search = () => {
   const inputRef = useRef();
-  const router = useRouter()
+  const router = useRouter();
 
+  // jika tidak ingin menggunakan form, maka bisa menggunakan event onClick dan onEvent
   const handleSearh = (event) => {
     event.preventDefault();
-    const keyword = inputRef.current.value
-
-    if(keyword === ""){
-      alert('Input tidak boleh kosong')
-      return
+    const keyword = inputRef.current.value;
+    if (keyword === "") {
+      alert("Input tidak boleh kosong");
+      return;
     }
-  // arahkan ke page dinamis dengan ditandai folder dengan dibungkus dengan kurung siku/bracket [nameFolder]
-   router.push(`/search/${keyword}`)
+    // arahkan ke page dinamis dengan ditandai folder dengan dibungkus dengan kurung siku/bracket [nameFolder]
+    router.push(`/search/${keyword}`);
   };
 
   return (
     <form onSubmit={handleSearh} className="relative">
       <input
-        className="py-2 pe-4 ps-3 text-black outline-none rounded-sm"
+        className="py-2 pe-4 ps-3 text-white  outline-none  border-color-third border rounded-sm bg-transparent"
         type="text"
-        placeholder="Search movie ..."
+        placeholder="Search Anime here..."
         ref={inputRef}
       />
-      <button className="absolute top-2 end-2 text-slate-800" type="submit">
+      <button
+        className="absolute top-2 end-2 text-color-primary font-bold"
+        type="submit"
+      >
         <MagnifyingGlass size={24} />
       </button>
     </form>

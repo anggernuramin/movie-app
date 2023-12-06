@@ -17,3 +17,64 @@ img{
 img:hover{
   scale: 1.02;
 }
+.bg-home{
+  background-image: url(../../public/assets/bg-home.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.bg-home::after{
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.bg-home::before{
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: rgb(0 0 0 / 40%);
+}
+
+.loading {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  animation: s4 4s infinite;
+}
+.loading::before,
+.loading::after {    
+  content:"";
+  grid-area: 1/1;
+  border:8px solid;
+  border-radius: 50%;
+  border-color:#E50914 #E50914 #0000 #0000;
+  mix-blend-mode: darken;
+  animation: s4 1s infinite linear;
+}
+.loading::after {
+  border-color:#0000 #0000 #E4E4ED #E4E4ED;
+  animation-direction: reverse;
+}
+
+@keyframes s4{ 
+  100%{transform: rotate(1turn)}
+}
+
+

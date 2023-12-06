@@ -1,8 +1,8 @@
-import { Inter } from "next/font/google";
+import { Gabarito } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const gabarito = Gabarito({ subsets: ["latin"] });
 
 // metadata untuk keperluan SEO
 export const metadata = {
@@ -15,11 +15,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="bg-white">
-          <Navbar />
-          <div className="container mx-auto bg-white">{children}</div>
-        </div>
+      <body className={gabarito.className}>
+        <Navbar />
+        <div className="bg-white">{children}</div>
       </body>
     </html>
   );
